@@ -2,7 +2,7 @@
   <div>
     <h1>{{title}}</h1>
     <hr>
-    <h2>Flitered books by Ownership</h2>
+    <h2>Filtered Books by Ownership</h2>
     <select v-model="holding">
       <option v-for="filter in filters">{{filter}}</option>
     </select>
@@ -26,9 +26,9 @@ export default {
       title: "All Books",
       states: ["Want to Read", "Read", "Reading"],
       books: [
-        { title: "Self-Reliance", author: "Ralph Waldo Emerson", finishedReading: true, ownerhip: "borrowed" },
-        { title: "American Gods", author: "Neil Gaiman", finishedReading: false, ownerhip: "bought" },
-        { title: "Amusing Ourselves to Death", author: "Neil Postman", finishedReading: true, ownerhip: "borrowed" }
+        { title: "Self-Reliance", author: "Ralph Waldo Emerson", finishedReading: true, ownership: "borrowed" },
+        { title: "American Gods", author: "Neil Gaiman", finishedReading: false, ownership: "bought" },
+        { title: "Amusing Ourselves to Death", author: "Neil Postman", finishedReading: true, ownership: "borrowed" }
       ],
       filters: ["borrowed", "bought"],
       holding: "bought"
@@ -49,7 +49,7 @@ export default {
       title: bookData.bookTitle,
       author: bookData.bookAuthor,
       finishedReading: bookData.finishedReading,
-      ownerhip: bookData.ownerhip
+      ownerhip: bookData.ownership
       });
     }
   }
