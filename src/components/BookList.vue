@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>{{title}}</h1>
+    <ul class="exists">
+      <book-item v-for='book in books' :key='book.id' :book='book'></book-item>
+    </ul>
     <hr>
     <h2>Filtered Books by Ownership</h2>
     <select v-model="holding">
@@ -49,7 +52,7 @@ export default {
       title: bookData.bookTitle,
       author: bookData.bookAuthor,
       finishedReading: bookData.finishedReading,
-      ownerhip: bookData.ownership
+      ownership: bookData.ownership
       });
     }
   }
